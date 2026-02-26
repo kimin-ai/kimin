@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimini AI </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="kimin ai.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Branding Section -->
+        <div class="brand-section">
+            <div class="logo">
+                <img src="kimin ai.png" alt="">
+                <!--<i class="fas fa-robot"></i>
+                <h1>Kimini AI</h1>-->
+            </div>
+            <p class="tagline">AI ya kisasa yenye uelewa wa kina, inayoweza kukusaidia katika maeneo mbalimbali ya kazi na maisha ya kila siku.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <div>
+                        <h3>Uelewa wa Kimantiki</h3>
+                        <p>AI inayofikiri kwa kina kabla ya kutoa majibu</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h3>Kasi ya Juu</h3>
+                        <p>Majibu ya haraka yanayotolewa kwa sekunde</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>Usalama wa Juu</h3>
+                        <p>Data yako iko salama na imehifadhiwa vizuri</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auth Section -->
+        <div class="auth-section">
+            <div class="auth-container">
+                <div class="auth-switch">
+                    <div class="auth-tab active" data-tab="login">Ingia</div>
+                    <div class="auth-tab" data-tab="signup">Jisajili</div>
+                </div>
+
+                <!-- Login Form -->
+                <div class="form-container active" id="login-form">
+                    <h2 class="form-title">Karibu Tena</h2>
+                    <p class="form-subtitle">Ingia kwenye akaunti yako ya Kimini AI</p>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="login-email">Barua Pepe</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" placeholder="weka barua pepe yako" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password">Nenosiri</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" placeholder="weka nenosiri lako" required>
+                            </div>
+                        </div>
+                        
+                        <div class="remember-forgot">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Nikumbuke</label>
+                            </div>
+                            <a href="#" class="forgot-link">Umesahau nenosiri?</a>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn" id="login-btn">
+                            <span>Ingia</span>
+                            <div class="loading" id="login-loading"></div>
+                        </button>
+                    </form>
+                    
+                    <div class="divider">au ingia na</div>
+                    
+                    <div class="social-auth">
+                       <a href="https://accounts.google.com/o/oauth2/v2/auth?
+client_id=CLIENT_ID
+&redirect_uri=http://localhost:3000/auth/google/callback
+&response_type=code
+&scope=openid%20email%20profile"> <div class="social-btn">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </div></a>
+                        <div class="social-btn">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        Huna akaunti? <a href="#" id="switch-to-signup">Jisajili hapa</a>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <div class="form-container" id="signup-form">
+                    <h2 class="form-title">Anza Safari Yako</h2>
+                    <p class="form-subtitle">Jisajili kwa muda wa bure</p>
+                    
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signup-name">Jina Kamili</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="signup-name" placeholder="weka jina lako kamili" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-email">Barua Pepe</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="signup-email" placeholder="weka barua pepe yako" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-password">Nenosiri</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signup-password" placeholder="unda nenosiri thabiti" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-confirm">Thibitisha Nenosiri</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signup-confirm" placeholder="andika nenosiri tena" required>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-container" style="margin-bottom: 30px;">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Nakubali <a href="#" style="color: #4cc9f0;">Sheria na Masharti</a></label>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn" id="signup-btn">
+                            <span>Jisajili</span>
+                            <div class="loading" id="signup-loading"></div>
+                        </button>
+                    </form>
+                    
+                    <div class="auth-footer" style="margin-top: 25px;">
+                        Tayari una akaunti? <a href="#" id="switch-to-login">Ingia hapa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+    <script src="js/oauth.js"></script>
+</body>
+</html>
