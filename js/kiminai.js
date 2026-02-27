@@ -8,7 +8,7 @@
         })();
 
         // === API CONFIGURATION ===
-        const API_KEY = "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";
+        const API_KEY = "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";
         const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
         // === DOM ELEMENTS ===
@@ -714,4 +714,5 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && deleteModal.classList.contains('active')) {
         hideDeleteModal();
     }
+
 });
